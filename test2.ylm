@@ -1,0 +1,10 @@
+ - hosts: localhost
+   tasks:
+   - name: installing GIT
+     yum: name=git state=latest
+     become: yes
+   - name: Taking CD course
+     git:
+      repo: 'https://github.com/Shay78/cdcourse'
+      dest: /home/ec2-user/cdcourse
+      clone: yes

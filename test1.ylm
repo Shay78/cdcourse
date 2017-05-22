@@ -1,0 +1,10 @@
+ - hosts: localhost
+   tasks:
+   - name: installing GIT
+     yum: name=git state=latest
+     become: yes
+   - name: Taking Pet Clinic
+     git:
+      repo: 'https://github.com/Shay78/spring-petclinic'
+      dest: /home/ec2-user/pet-clinic
+      clone: yes
