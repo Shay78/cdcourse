@@ -1,0 +1,9 @@
+ - hosts: localhost
+   tasks:
+   - name: Fetching and extract Maven
+     unarchive:
+      src: http://www-eu.apache.org/dist/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
+      copy: no
+      dest: /home/ec2-user/maven/
+      creates: /home/ec2-user/maven/apache-maven-3.5.0
+     become: yes
